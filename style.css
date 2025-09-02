@@ -669,7 +669,7 @@ nav{
 .stories > div:hover img,
 .house:hover .house-img img,
 .package:hover .package-img img {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 /* --------------- Registration Page Styles --------------- */
 
