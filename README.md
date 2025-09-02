@@ -3,7 +3,7 @@ A feature-rich, responsive front-end project designed to replicate the user inte
 
 A core concept of the design is the exclusive use of AI-generated imagery, demonstrating a futuristic approach to web content.
 
-[Live Demo Link Here] 
+[[Live Demo Link Here] ](https://utkarshp52.github.io/Easybnb---A-Modern-Travel-Booking-Website-Frontend/)
 
 <img width="1920" height="1020" alt="Screenshot 2025-08-29 110505" src="https://github.com/user-attachments/assets/f308c29a-0481-4dae-bff9-572adf40a831" />
 
