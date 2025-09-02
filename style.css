@@ -1,0 +1,754 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* --------------- Dark Mode Theme --------------- */
+
+/* 1. Define color variables for the default Light Theme */
+:root {
+    --primary-color: #ff5361;
+    --background-color: #fff;
+    --text-color: #333;
+    --secondary-text-color: #555;
+    --header-footer-bg: #333;
+    --header-footer-text: #fff;
+    --card-bg: #fff;
+    --border-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Define the same variables with different colors for the Dark Theme */
+body.dark-mode {
+    --primary-color: #ff5361;
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #a0a0a0;
+    --header-footer-bg: #111;
+    --header-footer-text: #fff;
+    --card-bg: #2b2b2b;
+    --border-color: #444;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 3. Add a smooth transition for color changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* This is the base body style that will use the variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+/* 4. CSS for the Toggle Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+.theme-switch input {
+    display: none;
+}
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+}
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("images/Front page image.png");
+    background-size: cover;
+    background-position: center;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+.logo{
+    width: 140px;
+    cursor: pointer;
+}
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: var(--header-footer-text);
+}
+.register-btn{
+    background-color: var(--header-footer-text);
+    color: var(--header-footer-bg);
+    padding: 8px 20px ;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.container {
+    padding: 0 7%;
+}
+.header h1{
+    font-size: 4vw;
+    font-weight: 500;
+    color: var(--header-footer-text);
+    text-align: center;
+    padding-top: 22% ;
+
+}
+.search-bar{
+    background: var(--card-bg);
+    width: 70%;
+    margin: 30px auto;
+    padding: 6px 10px 6px 30px;
+    border-radius: 50px;
+}
+.search-bar form{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.search-bar form input{
+    display: block;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--text-color);
+}
+.search-bar form button{
+    background: var(--primary-color);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.search-bar form button img{
+    width: 20px;
+    margin-top: 7px;
+}
+.location-input{
+    flex: 1;
+}
+.search-bar form label{
+    font-weight: 600;
+    color: var(--text-color);
+}
+/* -------------------Exclusives-------------------------------------- */
+.sub-title{
+    margin: 50px 0 20px;
+    font-size: 2.2vw;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.Exclusvies{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 30px;
+}
+.Exclusvies div img{
+    width: 100%;
+    border-radius: 10px;
+}
+.Exclusvies div{
+    position: relative;
+}
+
+/* ----------------Trending Places -------------------- */
+.trending{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 30px;
+    margin-bottom: 30px;
+}
+.trending div img{
+    width: 100%;
+    border-radius: 10px;
+}
+.trending h3{
+    font-weight: 600;
+    margin-top: 10%;
+    color: var(--text-color);
+}
+/* ------------------Call To Action(cta)---------------- */
+.cta {
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent),url(images/banner2.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 10%;
+    color: var(--header-footer-text);
+}
+.cta h3{
+    font-size: 4vw;
+    line-height: 5.3vw;
+    font-weight: 500;
+}
+.cta p{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.cta-btn{
+    background: var(--primary-color);
+    color: var(--header-footer-text);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* -----------------Traveler Stories--------------------- */
+.stories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 30px;
+    margin-bottom: 30px;
+}
+.stories div img{
+    width : 100%;
+    border-radius: 10px;
+}
+.stories div {
+    position: relative;
+    text-align: center;
+}
+.start-btn{
+    text-decoration: none;
+    background: var(--primary-color);
+    color: var(--header-footer-text);
+    width: 80%;
+    max-width: 350px;
+    display: block;
+    text-align: center;
+    margin: 60px auto;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+/* -----------------ABout Msg------------- */
+.about-msg{
+    text-align: center;
+    margin: 80px 0;
+    color: var(--text-color);
+    font-size: 17px;
+}
+.about-msg h2{
+    font-size: 28px;
+    margin: 30px;
+    font-weight: 500;
+}
+.linkedin img{
+    width : 30px;
+    height: auto;
+}
+.github img{
+    width : 30px;
+    height: auto;
+}
+.copyright{
+    text-align: center;
+    color: var(--text-color);
+}
+.fotter{
+    margin: 80px 0 10px;
+    text-align: center;
+}
+.fotter a{
+    text-decoration: none;
+    font-size: 22px;
+    margin : 0 10px;
+}
+.active {
+    position: relative;
+}
+.active::after{
+    content: '';
+    background: var(--header-footer-text);
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
+}
+/* ---------------Listing page-------------- */
+.navbar-white{
+    background: var(--card-bg);
+    box-shadow: 0 5px 10px var(--shadow-color); 
+}
+.navbar-white .nav-links li a{
+    color: var(--text-color);
+}
+.navbar-white .register-btn{
+    background: var(--primary-color);
+    color: var(--header-footer-text);
+}
+.navbar-white .active::after{
+    background: var(--primary-color);
+}
+.list-container{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.left-col{
+    flex-basis: 70%;
+}
+.right-col{
+    flex-basis: 20%;
+}
+.left-col h1{
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.house{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+}
+.house-img{
+    flex-basis: 40%;
+}
+.house-info{
+    flex-basis: 58%;
+    color: var(--secondary-text-color);
+}
+.house-img img{
+    width: 100%;
+    border-radius: 12px;
+}
+.house-info h3{
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 22px;
+    margin: 4px 0;
+}
+/* ----------------Star Rating-------------------- */
+.rating-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--border-color);
+}
+.rating-container input {
+    display: none;
+}
+.rating-container label {
+    cursor: pointer;
+    padding: 0 5px;
+}
+.rating-container label:hover,
+.rating-container label:hover ~ label {
+    color: #ffc107;
+}
+.rating-container input:checked ~ label {
+    color: #ffc107;
+}
+.rating-container{
+    font-size: 25px;
+    justify-content: flex-end;
+}
+/* ------------------------------------------------------------- */
+.house-price{
+    text-align: right;
+}
+.house-price h4{
+    font-size: 20px;
+    color: var(--text-color);
+}
+.house-price h4 span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.side-bar{
+    border: 1px solid var(--border-color);
+    padding: 20px 30px;
+    margin-top: 30px;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+.side-bar h2{
+    font-weight: 500;
+}
+.side-bar h3{
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    color: var(--secondary-text-color);
+    margin-bottom: 10px;
+}
+.filter p{
+    flex: 1;
+}
+.filter input{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.sidebar-links{
+    text-align: right;
+    margin: 20px 0;
+}
+.sidebar-links a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+.pagination img{
+    width: 15px;
+    margin: 10px 20px;
+}
+.right-arrow{
+    transform: rotate(180deg);
+}
+.pagination span{
+    margin: 10px 8px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--text-color);
+}
+.pagination .current{
+    background: var(--text-color);
+    color: var(--background-color);
+}
+
+/* --------------- Online Packages Page Styles --------------- */
+.package {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    align-items: center;
+}
+.package-img {
+    flex-basis: 40%;
+}
+.package-img img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+.package-info {
+    flex-basis: 58%;
+    color: var(--secondary-text-color);
+}
+.package-info h3 {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 22px;
+    margin: 4px 0;
+}
+.package-duration {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+.package-inclusions {
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+.package-inclusions li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.package-price {
+    text-align: right;
+}
+.package-price h4 {
+    font-size: 22px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+.package-price h4 span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+.package-price .cta-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+}
+
+/* --------------- Responsive Design --------------- */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    color: var(--header-footer-text);
+    cursor: pointer;
+    user-select: none;
+}
+.navbar-white .hamburger-menu {
+    color: var(--text-color);
+}
+@media (max-width: 700px) {
+    .register-btn { display: none; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 7%;
+        background: var(--header-footer-bg);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .nav-links li { margin: 10px 0; }
+    .hamburger-menu { display: block; }
+    .nav-links.active { display: flex; }
+    .register-btn.active {
+        display: block;
+        margin-top: 15px;
+    }
+    .navbar-white .nav-links {
+        background: var(--card-bg);
+    }
+}
+/* --------------- Image Modal/Lightbox Styles --------------- */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* --------------- Scroll Animation Styles --------------- */
+.hidden-animation {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+}
+.show-animation {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/* --------------- Hover Animation Effects --------------- */
+.Exclusvies > div,
+.trending > div,
+.stories > div,
+.house,
+.package {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.Exclusvies > div:hover,
+.trending > div:hover,
+.stories > div:hover,
+.house:hover,
+.package:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px var(--shadow-color);
+}
+.register-btn,
+.cta-btn,
+.start-btn {
+    transition: transform 0.2s ease;
+}
+.register-btn:hover,
+.cta-btn:hover,
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --------------- Image Zoom on Hover Effect --------------- */
+.Exclusvies > div,
+.trending > div,
+.stories > div,
+.house-img,
+.package-img {
+    overflow: hidden;
+    border-radius: 10px;
+}
+.Exclusvies > div img,
+.trending > div img,
+.stories > div img,
+.house-img img,
+.package-img img {
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+.Exclusvies > div:hover img,
+.trending > div:hover img,
+.stories > div:hover img,
+.house:hover .house-img img,
+.package:hover .package-img img {
+    transform: scale(1.1);
+}
+/* --------------- Registration Page Styles --------------- */
+
+.register-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.register-container .sub-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.form-group.terms {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.terms input {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+.form-group.terms label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+.form-group.terms a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.register-container .cta-btn {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+}
+
+/* Style for the active "Register" button in nav */
+.current-page-btn {
+    opacity: 0.7;
+    cursor: default;
+}
+.current-page-btn:hover {
+    transform: none; /* Disable hover grow effect */
+}
