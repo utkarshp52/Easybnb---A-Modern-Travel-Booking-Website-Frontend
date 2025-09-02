@@ -5,7 +5,8 @@ A core concept of the design is the exclusive use of AI-generated imagery, demon
 
 [Live Demo Link Here] 
 
-C:\Users\LENOVO LOQ\OneDrive\Pictures\Screenshots\Screenshot 2025-08-29 110505.png
+<img width="1920" height="1020" alt="Screenshot 2025-08-29 110505" src="https://github.com/user-attachments/assets/f308c29a-0481-4dae-bff9-572adf40a831" />
+
 
 ✨ Key Features
 This project is built from the ground up and includes a wide array of modern web features:
